@@ -2,15 +2,14 @@
 
 namespace EscapeFromTarkovTest.Pages
 {
-    public class MediaPage
+    public class MediaPage : BasePage
     {
-        private readonly IWebDriver _driver;
+        public MediaPage(IWebDriver driver) : base(driver) { }
 
-        public MediaPage(IWebDriver driver) => _driver = driver;
-
-        private IWebElement FirstVideo => _driver.FindElement(By.XPath("//*[@id=\"media_328\"]//a"));
+        private IWebElement FirstVideo => Driver.FindElement(By.XPath("//*[@id=\"media_328\"]//a"));
 
         public void OpenVideo() => FirstVideo.Click();
 
+        public void OpenPage(string url) => OpenUrl(url);
     }
 }

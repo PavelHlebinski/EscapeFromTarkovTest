@@ -3,27 +3,19 @@ using OpenQA.Selenium;
 
 namespace EscapeFromTarkovTest.Pages
 {
-    public class VideoPage
+    public class VideoPage : BasePage
     {
-        private readonly IWebDriver _driver;
+        public VideoPage(IWebDriver driver) : base(driver) { }
 
-        public VideoPage(IWebDriver driver)
-        {
-            _driver = driver;
-        }
+        private IWebElement Frame => Driver.FindElement(By.Id("widget7"));
 
-        private IWebElement Frame => _driver.FindElement(By.Id("widget7"));
-
-        private void Switch() => _driver.SwitchTo().Frame(Frame);
+        private void Switch() => Driver.SwitchTo().Frame(Frame);
 
         private IWebElement PlayButton =>
-            _driver.FindElement(By.XPath("//*[@id=\"blueimp-gallery\"]/div/div[1]/div/a"));
+            Driver.FindElement(By.XPath("//*[@id=\"blueimp-gallery\"]/div/div[1]/div/a"));
 
         private IWebElement StopButton =>
-            _driver.FindElement(By.XPath("//*[@id=\"movie_player\"]/div[29]/div[2]/div[1]/button"));
-
-        private IWebElement Timer =>
-            _driver.FindElement(By.XPath("//*[@id=\"movie_player\"]/div[29]/div[2]/div[1]/div[1]/span[1]"));
+            Driver.FindElement(By.XPath("//*[@id=\"movie_player\"]/div[29]/div[2]/div[1]/button"));
 
         public void PlayVideo() => PlayButton.Click();
 

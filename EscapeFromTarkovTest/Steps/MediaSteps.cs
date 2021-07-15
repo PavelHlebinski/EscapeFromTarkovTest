@@ -3,15 +3,15 @@
 namespace EscapeFromTarkovTest.Steps
 {
     [Binding]
-    public sealed class MediaStepDefinitions : BaseStep
+    public sealed class MediaSteps : BaseStep
     {
-        public MediaStepDefinitions(ScenarioContext scenarioContext) : base(scenarioContext) { }
+        public MediaSteps(ScenarioContext scenarioContext) : base(scenarioContext) { }
 
         [Given(@"Open page ""(.*)""")]
-        public void GivenOpenPage(string url) => MediaPage.OpenPage(url);
-        
+        public void GivenOpenPage(string url) => MainPage.OpenPage(url);
+
         [Given(@"Select first video")]
-        public void GivenSelectFirstVideo() => MediaPage.OpenVideo();
+        public void GivenSelectFirstVideo() => MainPage.OpenVideo();
 
         [When(@"Play is pressed")]
         public void WhenPlayIsPressed() => VideoPage.PlayVideo();

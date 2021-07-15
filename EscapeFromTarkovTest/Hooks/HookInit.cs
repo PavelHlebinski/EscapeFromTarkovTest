@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace EscapeFromTarkovTest.Hooks
 {
     [Binding]
-    public sealed class HookInit 
+    public sealed class HookInit
     {
         private readonly ScenarioContext _scenarioContext;
 

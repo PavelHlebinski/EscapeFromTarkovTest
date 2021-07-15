@@ -1,5 +1,4 @@
-﻿using Dynamitey.DynamicObjects;
-using EscapeFromTarkovTest.Drivers;
+﻿using EscapeFromTarkovTest.Drivers;
 using EscapeFromTarkovTest.Pages;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
@@ -14,8 +13,14 @@ namespace EscapeFromTarkovTest.Steps
 
         private IWebDriver Driver() => _scenarioContext.Get<DriverFactory>("SeleniumDriver").GetDriver();
 
-        protected MediaPage MediaPage => new MediaPage(Driver());
+        protected MainPage MainPage => new MainPage(Driver());
 
         protected VideoPage VideoPage => new VideoPage(Driver());
+
+        protected MerchPage MerchPage => new MerchPage(Driver());
+
+        protected BooksPage BooksPage => new BooksPage(Driver());
+
+
     }
 }

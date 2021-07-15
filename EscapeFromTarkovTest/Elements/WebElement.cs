@@ -1,5 +1,6 @@
 ﻿using EscapeFromTarkovTest.Drivers;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace EscapeFromTarkovTest.Elements
 {
@@ -7,6 +8,7 @@ namespace EscapeFromTarkovTest.Elements
     {
         private readonly By _locator;
         private readonly IWebDriver _driver;
+        private Actions Actions => new Actions(_driver);
 
         public WebElement(IWebDriver driver, By locator)
         {
@@ -34,6 +36,8 @@ namespace EscapeFromTarkovTest.Elements
         public string GetAttribute(string name) => InnerWebElement.GetAttribute(name);
 
         public void Switch() => _driver.SwitchTo().Frame(InnerWebElement);
+
+        public void ScrollToElement() => Actions.MoveToElement(InnerWebElement).Perform();
     }
 }
 

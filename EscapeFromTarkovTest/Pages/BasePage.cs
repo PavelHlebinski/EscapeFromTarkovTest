@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EscapeFromTarkovTest.Drivers;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using System;
 
 namespace EscapeFromTarkovTest.Pages
 {

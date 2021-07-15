@@ -1,7 +1,7 @@
-﻿Feature: Run video
+﻿Feature: EscapeFromTarkov Tests
 
-@PlayVideo
-Scenario: Open webpage and play video
+@EscapeFromTarkovSmoke
+Scenario: Open WebPage and play video
 	Given Open page "https://www.escapefromtarkov.com/"
 	And Select first video
 	When Play is pressed

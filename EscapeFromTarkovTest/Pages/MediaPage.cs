@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using EscapeFromTarkovTest.Elements;
+using OpenQA.Selenium;
 
 namespace EscapeFromTarkovTest.Pages
 {
@@ -6,7 +7,7 @@ namespace EscapeFromTarkovTest.Pages
     {
         public MediaPage(IWebDriver driver) : base(driver) { }
 
-        private IWebElement FirstVideo => Driver.FindElement(By.XPath("//*[@id=\"media_328\"]//a"));
+        private WebElement FirstVideo => new WebElement(Driver, By.XPath("//*[@id=\"media_328\"]//a"));
 
         public void OpenVideo() => FirstVideo.Click();
 

@@ -75,11 +75,11 @@ namespace EscapeFromTarkovTest.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Open webpage and play video")]
-        [NUnit.Framework.CategoryAttribute("PlayVideo")]
+        [NUnit.Framework.CategoryAttribute("EscapeFromTarkovSmoke")]
         public virtual void OpenWebpageAndPlayVideo()
         {
             string[] tagsOfScenario = new string[] {
-                    "PlayVideo"};
+                    "EscapeFromTarkovSmoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open webpage and play video", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4

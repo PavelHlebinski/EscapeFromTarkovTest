@@ -1,38 +1,22 @@
-﻿using EscapeFromTarkovTest.Drivers;
-using EscapeFromTarkovTest.Pages;
-using OpenQA.Selenium;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 
 namespace EscapeFromTarkovTest.Steps
 {
     [Binding]
-    public sealed class MediaStepDefinitions
+    public sealed class MediaStepDefinitions : BaseStep
     {
-        private IWebDriver _driver;
-        private readonly ScenarioContext _scenarioContext;
-        private MediaPage _mediaPage;
-        private VideoPage _videoPage;
+        public MediaStepDefinitions(ScenarioContext scenarioContext) : base(scenarioContext) { }
 
-        public MediaStepDefinitions(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
         [Given(@"Open page ""(.*)""")]
-        public void GivenOpenPage(string url)
-        {
-            _driver = _scenarioContext.Get<DriverFactory>("SeleniumDriver").GetDriver();
-            _mediaPage = new MediaPage(_driver);
-            _videoPage = new VideoPage(_driver);
-            _mediaPage.OpenPage(url);
-        }
-
+        public void GivenOpenPage(string url) => MediaPage.OpenPage(url);
+        
         [Given(@"Select first video")]
-        public void GivenSelectFirstVideo() => _mediaPage.OpenVideo();
+        public void GivenSelectFirstVideo() => MediaPage.OpenVideo();
 
         [When(@"Play is pressed")]
-        public void WhenPlayIsPressed() => _videoPage.PlayVideo();
+        public void WhenPlayIsPressed() => VideoPage.PlayVideo();
 
         [Then(@"Stop video button contains text ""(.*)""")]
-        public void ThenStopVideoButtonContainsText(string text) => _videoPage.CheckVideoPlaying(text);
+        public void ThenStopVideoButtonContainsText(string text) => VideoPage.CheckVideoPlaying(text);
     }
 }

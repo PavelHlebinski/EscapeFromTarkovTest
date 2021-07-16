@@ -24,5 +24,11 @@ namespace EscapeFromTarkovTest.Steps
         protected SupportPage SupportPage => new SupportPage(Driver());
 
         protected ErrorPage ErrorPage => new ErrorPage(Driver());
+
+        protected PreOrderPage PreOrderPage => new PreOrderPage(Driver());
+
+        protected WikiPage WikiPage => new WikiPage(Driver());
+
+        protected WeaponPage WeaponPage => new WeaponPage(Driver());
     }
 }

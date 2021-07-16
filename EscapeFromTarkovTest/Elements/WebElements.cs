@@ -1,6 +1,5 @@
 ﻿using EscapeFromTarkovTest.Drivers;
 using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,7 +34,7 @@ namespace EscapeFromTarkovTest.Elements
 
         public int CountElements() => InnerWebElementsList.Count();
 
-        public bool IsElementsValid() => InnerWebElementsList.All(element => Convert.ToInt32(element.Text) > 0);
+        public bool IsElementsValid() => InnerWebElementsList.All(element => int.TryParse(element.Text, out _));
 
         public IWebElement GetFirstElement() => InnerWebElementsList.FirstOrDefault();
     }

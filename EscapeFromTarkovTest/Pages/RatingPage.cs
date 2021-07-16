@@ -8,7 +8,7 @@ namespace EscapeFromTarkovTest.Pages
     {
         public RatingPage(IWebDriver driver) : base(driver) { }
 
-        private const string PlayerRowLocator = "//*[@id=\"ratingTable\"]/div[3]/table/tbody/tr";
+        private const string PlayerRowLocator = "//*[@id=\"ratingTable\"]/div/table/tbody/tr";
         private const string SortKillsLocator = "//*[@data-val=\"kills\"]";
 
         private WebElement SortDropDown =>

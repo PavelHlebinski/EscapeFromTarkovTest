@@ -18,5 +18,11 @@ namespace EscapeFromTarkovTest.Steps
         protected VideoPage VideoPage => new VideoPage(Driver());
 
         protected BooksPage BooksPage => new BooksPage(Driver());
+
+        protected RatingPage RatingPage => new RatingPage(Driver());
+
+        protected SupportPage SupportPage => new SupportPage(Driver());
+
+        protected ErrorPage ErrorPage => new ErrorPage(Driver());
     }
 }

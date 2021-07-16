@@ -25,9 +25,15 @@ namespace EscapeFromTarkovTest.Elements
             }
         }
 
-        public void WaitForElementIsPresent() => new DriverFactory(null).GetWait(_driver, 10).Until(drv => drv.FindElements(_locator).Count > 0);
+        public void WaitForElementIsPresent() => new DriverFactory(null)
+                .GetWait(_driver, 10)
+                .Until(drv => drv.FindElements(_locator).Count > 0);
 
         public void Click() => InnerWebElement.Click();
+
+        public void WaitVisibility() => new DriverFactory(null)
+            .GetWait(_driver, 10)
+            .Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(_locator));
 
         public void SendKeys(string value) => InnerWebElement.SendKeys(value);
 
